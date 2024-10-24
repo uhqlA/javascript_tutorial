@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>example - odering food online</h1>
+    <p>Main task is to order food and eat when it arrives</p>
+    <p>other small - do homework, do your office, watch tv anytask you can in the meantime</p>
+
+    <script>
+            // async - main task( order food and it will take sometime to finish task)
+            // await - this wia chake if food has arrived, you pause your other small task when your food as arrived
+            //syntax - for main task
+            // async function orderFood(){
+            //     //this function willl return promise
+            //     return "food is ready!"
+            // }
+
+            async function orderFood() {
+
+                let food  = await prepareFood();
+                console.log(food)
+                
+            }
+
+            console.log("watching tv, doing homework, doing other task")
+
+            function prepareFood(){
+                return new Promise(reslove=>{
+                    setTimeout(()=>{
+                        reslove("Food is ready!")
+                    },5000)
+                })
+
+           
+            }
+            orderFood() //call the asynv function
+    </script>
+</body>
+</html>
