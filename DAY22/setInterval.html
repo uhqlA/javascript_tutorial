@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <button onclick="Stop()">Stop </button>
+
+    <script>
+        // setinterval - giving the break per delay fixed time and call the function again and again
+
+        // clearinterval - setinterval will stop
+
+        const myInterval = setInterval(setColor, 500)
+
+        function setColor(){
+            let x=document.body;
+            x.style.backgroundColor = x.style.backgroundColor == "navy" ? "red":"navy";
+        }
+
+        function Stop(){
+            clearInterval(myInterval);
+        }
+    </script>
+    
+</body>
+</html>

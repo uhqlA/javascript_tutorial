@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        //class - is a blueprint
+
+        class Backacc{
+            constructor(accno,name,balance=0,amount){
+                this.accno=accno;
+                this.name=name;
+                this.balance=balance;
+                this.amount=amount;
+            }
+
+            deposit(accno,amount){
+                this.balance +=amount  ///balance = balance + amount
+                console.log(`HI ${this.name}, ammount has been deposited in your account and your current balance is : ${this.balance}`)
+            }
+
+            accbalance(){
+
+            console.log(`Your Acc balance is ${this.balance}`)
+
+            }
+            withdraw(accno,amount){
+                // balance=0
+
+                if(this.balance>=amount){
+                    this.balance-=amount;   //balance = balance - amount
+                    console.log(`Hi ${this.name}, ${this.amount} has been withdrawn from your acc and your current balance is: ${this.balance}`)
+                }else{
+                    console.log('Sorry insufficient Balance')
+                }
+
+            }
+        }
+
+        let acc1 = new Backacc(110,"john")
+
+        acc1.accbalance();
+        acc1.withdraw(110, 500);
+        acc1.deposit(110,1000)
+        acc1.deposit(10,1000)
+        acc1.withdraw(110, 400);
+    </script>
+    
+</body>
+</html>

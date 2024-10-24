@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #myform{
+            border: 2px solid black;
+            border-radius: 5px;
+            background-color: beige;
+            align-items: center;
+            box-shadow: rgba(0, 0, 0, 0.5);
+            width: 500px;
+            height: 500px;
+            justify-content: center;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>Form validation</h1>
+    <form id="myform" onsubmit="return validate()">
+        <label for="name">Name:</label><br>
+        <input id="name" name="name" type="text"><br>
+        <span id="name-error" class="error"></span><br>
+
+        <label for="email">Email:</label><br>
+        <input id="email" name="email" type="email"><br>
+        <span id="email-error" class="error"></span><br>
+
+        <label for="password">Password:</label><br>
+        <input id="password" name="password" type="password"><br><br>
+        <span id="pass-error" class="error"></span><br>
+
+        <input type="submit" value="submit">
+    </form>
+
+
+    <script>
+        function validate(){
+            name=document.getElementById("name")
+            email=document.getElementById("email")
+            password=document.getElementById("password")
+
+            //select the span element/tag
+            document.getElementById("name-error").innerHTML=''
+
+            document.getElementById("email-error").innerHTML=''
+
+            document.getElementById("pass-error").innerHTML=''
+
+
+
+            // lOGIC TO CHECK WHEATHER ALL THE INPUT HAS BEEN FILLED.
+            let isvalid=true;
+            if(name.value === ""){
+                document.getElementById('name-error').innerHTML="Invalid username"
+                isvalid=false;
+            }
+
+            if(email.value === ""){
+                document.getElementById('email-error').innerHTML="Email is required"
+                isvalid=false;
+            }
+
+            if(email.value === ""){
+                document.getElementById('-error').innerHTML="Password is required"
+                isvalid=false;
+            }
+
+        }
+    </script>
+    
+</body>
+</html>

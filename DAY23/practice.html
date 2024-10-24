@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input id="myinput" placeholder="Type something or search and click outside" style="width: 200px; height: 20px;">
+
+    <script>
+
+        function handleKeyPress(event) {
+            console.log("Key Pressed:" + event.key);
+        }
+
+        function handle(event){
+            console.log("enter" + event.target.value)
+        }
+
+        const input = document.querySelector("#myinput")
+        input.addEventListener("keypress:", handleKeyPress)
+
+        input.addEventListener("change")
+
+    </script>
+</body>
+
+</html>

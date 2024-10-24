@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class GameCharacter{
+            constructor(name,type,weapon){
+                this.name = name;
+                this.type = type;
+                this.weapon = weapon;
+            }
+        }
+
+        let batman = new GameCharacter("Batman", "Super Hero", "Gun")
+        let archer = new GameCharacter("John", "Archer", "Bow and Arrow")
+        let hamuman = new GameCharacter("Hamuman", "SuperHero", "Anything")
+
+        console.log(batman.weapon)
+        console.log(batman.name)
+        console.log(archer.name)
+    </script>
+</body>
+</html>

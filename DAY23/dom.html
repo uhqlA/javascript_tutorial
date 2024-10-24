@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1 id="heading">Hello world</h1>
+    <p class="paragraph">this is the first paragraph</p>
+    <p class="paragraph">this is the second paragraph</p>
+
+    <input type="text" name="username" value="John">
+
+    <div class="container">
+        <span class="item">item 1</span>
+    </div>
+
+
+    <script>
+        // 1.getElementById
+
+        const heading= document.getElementById("heading")
+        console.log("getElementById:" , heading.innerHTML)
+
+        // 2.get elementbyname
+        const username1=document.getElementsByName("username")[0];
+        console.log(username1.value)
+
+        // 3. getelementby tag
+        const tag=document.getElementsByTagName("p")
+        console.log("paragraph")
+        for(let p of paragraph){
+            console.log(p.innerHTML)
+        }
+    </script>
+
+</body>
+</html>

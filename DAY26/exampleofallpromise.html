@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        let orderOne = new Promise((resolve,reject)=> setTimeout(resolve,5000,"pizza from shop 1"))
+
+        let orderTwo = new Promise((resolve,reject)=> setTimeout(resolve,2000,"pizza from shop 2"))
+
+        let orderThree = new Promise((resolve,reject)=> setTimeout(reject,1500,"pizza from shop 3"))
+
+
+        //method - promiseall
+        // Promise.all([orderOne,orderTwo,orderThree])
+
+        // .then((pizza)=>console.log("All pizza arrrived"))
+
+        // .catch((error)=>console.log("one order failed"))
+
+
+        //method-promise.allsettled you wil get results for each promise,whether it is resolved or rejected
+
+        Promise.allSettled([orderOne,orderTwo,orderThree])
+        .then((results)=>console.log("All orders finished" ,results))
+
+
+
+        //methode 3 
+
+        Promise.race([orderOne,orderTwo,orderThree])
+        .then((firstpizza)=>console.log("fisrt pizza arrived",firstpizza))
+
+        .catch((error)=>console.log("first order failed",error))
+
+
+        // method 4
+
+        Promise.any([orderOne,orderTwo,orderThree])
+        .then((firstsuccessfulpizza)=>console.log("first pizza or first successful promise",firstsuccessfulpizza))
+
+        .catch((error)=>console.log("all order failed",error))
+    </script>
+    
+</body>
+</html>

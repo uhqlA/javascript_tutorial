@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Asynchronous -allowa you to do multiple task at the same time</h1>
+    
+    <button onclick="startTask()">Turn on</button>
+
+    <script>
+        function startTask(){
+            console.log("Step 1: start boiling water(this task will take 2 minutes to complete)")
+            setTimeout(()=>{
+                console.log("Step 2: water is ready")
+            },5000) //wait for 2 minutes
+
+            console.log("Step 3: while waiting for water, wash dishes")
+        }
+
+    </script>
+</body>
+</html>

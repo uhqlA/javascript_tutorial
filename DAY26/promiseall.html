@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Promise all - all promise should be resolved</h1>
+
+    <script>
+        let promise1 = Promise.resolve("Task 1 done")
+        let promise2 = Promise.reject("Task 2 failed")
+        let promise3 = Promise.resolve("Task 3 done")
+
+
+        //syntax
+        Promise.all([promise1,promise2,promise3])
+
+        //if any one promise gets rejected the whole operation is getting failed
+
+        //results:
+        .then(result =>{
+            console.log(result)
+        })
+
+        .catch(error =>{
+            console.log(error)
+        })
+
+        
+    </script>
+</body>
+</html>

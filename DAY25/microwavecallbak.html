@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        //step 1: setting the timer(microwave)
+        function setTimer(callback){
+            console.log("bakiing cookies...")
+
+            //step 2: wait for 10 minutes till it get baked
+        setTimeout(function(){
+            console.log("Cookies are ready!")
+            callback(); //step 4: calling the callback function
+        },10000) //10 sec
+        }
+
+        function takeOuitCookies(){
+            console.log("Taking out my cookies out of oven")
+        }
+
+        setTimer(takeOuitCookies);
+        console.log("doing other things while cookies are baked")
+    </script>
+    
+</body>
+</html>

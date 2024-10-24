@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .grandparent{
+        border: 2px solid black;
+        height: 200px;
+        margin: 20px;
+    }
+
+    .parent{
+        border: 2px solid red;
+        height: 150px;
+        margin: 20px;
+    }
+
+    .child{
+        border: 2px solid blue;
+        height: 100px;
+        margin: 20px;
+    }
+</style>
+<body>
+
+    <div class="grandparent">Grandparent-root element
+        <div class="parent">parent node-head&body
+            <div class="child">sibling-title,tags
+
+            </div>
+        </div>
+    </div>
+
+
+    <script>
+        //EVENT BUBBLING - LOW TO HIGH
+
+        const grandparent=document.querySelector(".grandparent")
+
+        const parent=document.querySelector(".parent")
+
+        const child=document.querySelector(".child")
+
+        //ADDEVENTLISTENER
+        // grandparent.addEventListener("click",()=>{
+        //     alert("GRANDPARENT IS CLICKED")
+        // },)
+
+        // parent.addEventListener("click", ()=>{
+        //     alert("PARENT IS CLICKED")
+        // },)
+
+        // child.addEventListener("click", ()=>{
+        //     alert("CHILD IS CLICKED")
+        // },)
+
+
+        //EVENT CAPTURING - HIGH TO LOW
+
+        grandparent.addEventListener("click",()=>{
+            alert("GRANDPARENT IS CLICKED")
+        },true)
+
+        parent.addEventListener("click", ()=>{
+            alert("PARENT IS CLICKED")
+        }, true)
+
+        child.addEventListener("click", ()=>{
+            alert("CHILD IS CLICKED") 
+        },true)
+
+
+    </script>
+    
+</body>
+</html>

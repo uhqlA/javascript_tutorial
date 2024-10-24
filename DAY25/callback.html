@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1> callback functions</h1>
+
+    <script>
+        function doHomeWork(subject, callback){
+            console.log(`doing homework for ${subject}...`) //template-whenever we use backticks ` and we want to call parameter we usee ${}
+            callback();
+        }
+
+        doHomeWork("html", function(){
+            console.log("Finished Homework"); //A callback is a function that gets passed into another argument
+        })
+    </script>
+    
+</body>
+</html>

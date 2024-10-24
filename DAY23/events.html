@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        #mydiv{
+            width: 200px;
+            height: 200px;
+            background-color: blue;
+            overflow: auto;
+        }
+
+        .content{
+            height: 300px; 
+        }
+    </style>
+</head>
+<body>
+    <h1 id="h1">WELOCME TO EVENTS</h1>
+    <p>hello guys</p>
+    <p class="hello">we will study about events today</p>
+    <button id="mybutton">Click me</button>
+
+    <input id="myinput" placeholder="Type somethin or search and click outisde" style="width: 200px;">
+
+
+    <div id="mydiv">
+        <div class="content">scroll inside</div>
+    </div>
+
+    <script>
+//function to handle keypress event
+
+function handleKeyPress(event){
+    console.log('Key Pressed :' +event.key);
+}
+
+//function to handle key up
+
+function handleKeyUp(event){
+    console.log('Key released :' +event.key);
+}
+
+//function to handle keydown
+// function handleKeyDown(event){
+//     console.log('KEY down ' +event.key);
+// }
+
+
+//function to handle change event
+function handleChange(event){
+    console.log('Input Changed :' + event.target.value)
+}
+
+function handle(){
+    alert('button is clicked')
+}
+
+function handlemouseOver(){
+const div= document.querySelector("#mydiv");
+div.style.backgroundColor='red';
+
+}
+
+function handlemouseOut(){
+const div= document.querySelector("#mydiv");
+div.style.backgroundColor='lightgreen';
+
+}
+
+function handleScroll(event){
+console.log('scrolled')
+}
+
+
+//GET ELEMENTS
+const button=document.querySelector('#mybutton');
+const input =document.querySelector('#myinput')
+const div =document.querySelector('#mydiv')
+
+
+
+///add event listerner
+
+button.addEventListener('click',handle);
+
+//input.addEventListener('keypress',handleKeyPress);
+
+//input.addEventListener('keyup' , handleKeyUp)
+
+//input.addEventListener('change',handleChange);
+
+
+div.addEventListener('mouseover',handlemouseOver);
+
+div.addEventListener('mouseout',handlemouseOut)
+
+div.addEventListener('scroll',handleScroll);
+    </script>
+</body>
+</html>
