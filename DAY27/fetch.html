@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+        fetch("https://api.coindesk.com/v1/bpi/currentprice.json")
+
+            .then(response=>response.json()) //thus will convert data into readable and writable format
+
+            .then(data=> console.log(data))
+
+            .catch(error=>console.log("Error")) //handle any error
+    </script>
+</body>
+</html>

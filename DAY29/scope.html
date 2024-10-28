@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <h1>global scope - living room, <br>local scop - bedroom <br> block scope - locker inside bed</h1>
+
+    <script>
+        //global scope - can be access anywhere
+
+        let house = "this is the whole house"
+
+        function enterBedroom(){
+
+            //local scope 
+            let bedroom= "This ia the bedroom";
+
+            if(true){
+                //Block scope
+                let locker = "This ia the locker inside the bedroom"
+
+                // console.log(locker)
+                // console.log(bedroom)
+                // console.log(house)
+            }
+
+            // console.log(bedroom) //yes
+            // console.log(house) //yes
+            // console.log(locker) //no
+        }
+
+        console.log(house)
+
+        console.log(locker)
+        console.log(bedroom)
+
+        enterBedroom()
+    </script>
+    
+</body>
+</html>
