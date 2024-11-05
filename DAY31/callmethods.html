@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Requirement - 2 objects</h1>
+
+    <script>
+
+        //this is object1 with a function/method
+        let person = {
+            name: "Issabela",
+            greet: function(greeting){
+                console.log(`${greeting}, my name is ${this.name}`);
+            }
+        }
+
+        //this is aobject2 where we use the function of object1
+        let anotherperson={
+            name:"Serbia"
+        }
+
+        //using call method
+        person.greet.call(anotherperson, 'Hello')
+
+
+
+        //using apply
+        person.greet.apply(anotherperson,['HI'])
+
+        //USING BIND
+        let abc = person.greet.bind(anotherperson, 'Hey')
+        abc();
+    </script>
+</body>
+</html>

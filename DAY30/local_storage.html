@@ -11,8 +11,19 @@
         //setting a local storage
 
         localStorage.setItem('cartItem', 'iphone15')
+        localStorage.setItem('name', 'abc')
+        localStorage.setItem('password', 'xyz')
 
         let item = localStorage.getItem('cartItem')
+
+        //remove an item
+
+        // localStorage.removeItem('cartItem')
+
+
+
+        //clear all the item
+        localStorage.clear();
 
         console.log(item)
     </script>

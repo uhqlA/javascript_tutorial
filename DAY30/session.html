@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <h1>Session - once you close the tab or browser the data is gone</h1>
+
+    <script>
+        //setting an item
+
+        sessionStorage.setItem('username', 'vincent')
+
+        //get the item 
+        let sessionItem = sessionStorage.getItem("username")
+
+        console.log(sessionItem)
+    </script>
+</body>
+</html>
