@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!-- INDUSTRY EXAMPLE - WHENEVER WE TYPE ANYTHING IN SEARCH BOX IN ONLINE SHOPPING WEBSITE
+    DEBOUNCE WE HELP TO WAIT FOR YOU TO STOP TYPING FOR A MOMENT
+    BEFORE IT SHOWS YOU SUGGESTION, IN THIS WAY IT DOESTN'T SHOW  -->
+<input type="text" id="search" placeholder="type to search">
+
+    <script>
+        function debounce(func,delay){
+            let debounceTimer;
+
+            return function(){
+                const context=this;
+                const args = arguments;
+
+
+                clearTimeout(debounceTimer);
+                debounceTimer = setTimeout(()=> func.apply(context,args),delay)
+
+            }
+        }
+
+        const searchInput = document.getElementById('search')
+        searchInput.addEventListener("input", debounce(function(){
+            console.log("search query:", this.value);
+        },5000))
+    </script>
+</body>
+</html>
