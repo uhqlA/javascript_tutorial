@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        //QUEUE = FIFO (FIRRST IN FIRST OUT)
+        let counterLine = [] //empty array
+        counterLine.push('sarith')
+        counterLine.push("lokesh")
+        counterLine.push('haji')
+        counterLine.push("Ajali")
+        counterLine.push('Rhagu')
+        counterLine.push("jeshu")
+        counterLine.push("data added to the last")
+
+        //REMOVE DATA OR DELETE FROM QUEUE WE USE 
+        //keyword - shift
+
+        // console.log(counterLine.shift())
+        // console.log(counterLine)
+
+
+
+        //realtime example
+        //customer support system
+        let supportQueue = [];
+        supportQueue.push("ticket 1 came from shubra");
+        supportQueue.push("ticket 2 came from akansha");
+        supportQueue.push("ticket 3 came from Raghu");
+
+        supportQueue.push("ticket 4 came from Ajali");
+
+        console.log(supportQueue.shift())
+        console.log(supportQueue)
+
+    </script>
+    
+</body>
+</html>
