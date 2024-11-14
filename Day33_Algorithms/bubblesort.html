@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //BUBBLE SORT:
+        //STEP1: COMPARE THE FIRST TWO ELEMENT(ARRAY)
+        //STEP2: if the first element is bigger than the second element
+        //STEP3: swap - exchnage the place 
+        //STEP4: move to next pair 
+        //STEP5: start the cycle again from begin to checck
+
+
+        //things to remeber - everytime check the lenght of array, for loop is used to travel inside the array
+
+
+
+        function bubblesort(arr){
+            let n = arr.length  // it will chekc the length of array 
+            let swaap 
+            do{
+                swaap=false
+                for( let i=0; i<n-1;i++){
+
+                    if(arr[i]>arr[i+1]){ //if() is true we have to swap
+                        let temp=arr[i]
+                        arr[i]=arr[i+1]
+                        arr[i+1] = temp
+                        swaap=true
+                    }
+                }
+            }while(swaap)
+            return arr
+        }
+        console.log(bubblesort([10,2,6,48,4,50,2,98,108,5,3]))
+    </script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        //EX-PLAYLIST management in spotify
+        // > -next song symbol
+
+        class Node{
+            //class will give prsentation / blueprit of a node 
+            constructor(title){
+                this.title = title;
+                this.next = null;
+            }
+        }
+
+        //NOTE: ALWAYS CRETE AN OBJECT IF YOUWWANT OT ACESS OR USE A ACLAASS CONCEPT
+
+        let song1= new Node("song1")
+        let song2= new Node("memories")
+        let song3= new Node("song3")
+        // let SONG1= new Node("song1")
+
+        song1.next = song2
+        song2.next = song3
+
+
+        console.log(song1.next.title) //memories 
+        console.log(song2.next.title)
+        console.log(song3.next.title)
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+            //DATA IS STOREED IN FORM OF ARRAY
+        //SELECTION - TO SELECT SMALLEST ELEMNT/DATA IN ARRAY
+        //EX-10,2,50,9 == 2 IS SMALLEST, COMPARE "2" WITH EVERYONE 2, 10
+        //1. SELECT SORT:
+            //STEP1: FIND THE SMALLEST ELEMENT IN ARRAY
+            //STEP2: SWAP IT WITH THE FIRST ELEMENT
+            //STEP3: FIND THE NEXT SMALLEST ELEMENT
+            //STEP4: SWAP IT WITH SECOND ELEMENT IN ARRAY
+            //STEP5: REPEAT UNTILL IT IS SORTED
+
+        //things to remeber - everytime check the lenght of array, for loop is used to travel inside the array
+
+        function selectsort(arr){
+            let n=arr.lenght;
+
+            for(let i=0;i<n-1;i++){
+                let minIndex=i;
+
+                for(j=i+1; j<n;j++){
+                    if(arr[j]<arr[minIndex]){
+                        minIndex=j;
+                    }
+                }
+                if(minIndex!=i){
+                    let temp= arr[i]
+                    arr[j]=arr[minIndex]
+                    arr[minIndex]=temp
+                }
+            }
+            return arr
+        }
+        console.log(selectsort([10,3,60,6,7,1,8]))
+    </script>
+    
+</body>
+</html>

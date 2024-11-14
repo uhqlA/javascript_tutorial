@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+
+   
+    //MAP OBJECT stores data in KEY & VALUE
+
+    //1create a map object syntax - new Map()
+
+    let friendcolor = new Map();
+
+    friendcolor.set("Akansha", "black")
+    friendcolor.set("Saritha", "blue")
+    friendcolor.set("Jiya", "red")
+    friendcolor.set("Ram", "orange")
+
+
+
+    console.log(friendcolor.get("Akansha"))
+
+
+    //has() - it will check the key if it has returned a true or else false
+
+    console.log(friendcolor.has("Ram"))
+    console.log(friendcolor)
+
+    //foreach()-to get theoutput has each key n value pair
+    friendcolor.forEach((color,friend)=>{
+        console.log(`${friend} fav color is ${color}`)
+    })
+
+
+
+</script>
+    
+</body>
+</html>

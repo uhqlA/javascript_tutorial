@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        class treeNode{
+            //representing of tree with the help of class
+            constructor (value){
+                this.value=value;
+                this.children=[] //empty array of root node
+            }
+
+            addChild(childNode){
+                //push-add children in array
+                this.children.push(childNode)
+            }
+        }
+
+        //new classname - it cretes object
+        let grandparent = new treeNode("grandparent,rootnode")
+
+        let parent1 = new treeNode("parent 1")
+
+        let parent2 = new treeNode("parent 2")
+
+        let child1 = new treeNode("child 1")
+
+        let child2 = new treeNode("child 2")
+
+        //connecting tree with method of addchild
+        grandparent.addChild(parent1);
+        grandparent.addChild(parent2);
+
+        parent1.addChild(child1);
+        parent2.addChild(child2);
+
+        console.log(grandparent);
+
+    </script>
+</body>
+</html>
