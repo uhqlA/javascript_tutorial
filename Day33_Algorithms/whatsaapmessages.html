@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    <script>
+        function sortContact(){
+            return contacts.sort((a,b)=>a.name.localeCompare(b.name))
+        }
+
+        let contacts=[
+            {name: "Vincent",lastmessage:"yup"},
+            {name: "jiya",lastmessage:"hey"},
+            {name: "madhu",lastmessage:"hii"},
+            {name: "aankasha",lastmessage:"okay"},
+
+
+        ];
+
+        console.log(sortContact(contacts))
+    </script>
+</body>
+</html>

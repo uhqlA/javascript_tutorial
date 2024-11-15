@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+
+    <script>
+
+        var arr=[8,67,23,1,3,45,89,0,4,7]
+
+        n=arr.length
+
+        function selectionsort(arr,n){
+            for (let i=0; i<n-1;i++){
+                for(let j=i+1; j<n;j++){
+                    if(arr[i]>arr[j]){
+                        var temp=arr[i]
+                        arr[i]=arr[j]
+                        arr[j]=temp;
+                    }
+                }
+
+            }
+        }
+
+        console.log("before sorting : " +arr)
+        selectionsort(arr,n)
+        console.log("after sorting : " +arr)
+
+    </script>
+</body>
+</html>
