@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let x=1
+        function recursion(x){
+            console.log(x) //print the current value of x
+
+            if (x==8){
+                return //stop the function when x = 8
+            }
+            recursion(x+1); //calls the function 
+        }
+
+        recursion(x)
+    </script>
+    
+</body>
+</html>

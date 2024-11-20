@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        //QUICK SORT
+        //STEP1: CHOSE THE PIVOT ELEMENT FROM ARRAY
+        //STEP2: PARTITION OF ARRAY INTO TWO PARTS
+        //STEP3: SMALL ELEMENT <PIVOT = LEFT AND GREATER ELEMENT > PIVOT = RIGHT SIDE
+
+            function quicksort(arr){
+                if (arr.length<=1){
+                    return arr;
+                }
+                const pivot=arr[arr.length-1]
+                const left=[]
+                const right = []
+
+                for(i=0;i<arr.length-1;i++){
+                    if(arr[i]<pivot){
+                        left.push(arr[i])
+                    }else{
+                        right.push(arr[i])
+                    }
+                }
+                return quicksort(left).concat(pivot,quicksort(right))
+            }
+
+            const unsortedArray=[3,45,8,23,89,23,656,2342,974,223,323,2466]
+
+            const sortArray=quicksort(unsortedArray)
+            console.log(sortArray)
+    </script>
+    
+</body>
+</html>

@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //INSERTION SORT - PLAYING WITH CARD IN YOUR HAND
+
+        //STEP1: CHOOSE THE KEY ELEMENT
+        //STEP2: COMPARE THE REST ELEMENT/DATA IN ARRAY WITH THE KEY ELEMENT
+        //TRICK: SMALLER ELEMENT - LEFT OF KEY AND THE GREATER ELEMENT - RIGHT OF KEY
+
+
+        function insertionsort(arr){
+            let n=arr.length 
+            for(i=1;i<n;i++){
+                let key=arr[i]
+                let j=i-1;
+                while(j>=0 && arr[j]>key){
+                    arr[j+1]=arr[j]
+                    j=j-1;
+                }
+                arr[j+1]=key
+            }
+            return arr;
+        }
+        console.log(insertionsort([6,20,34,9,2,108,23,96,30]))
+    </script>
+</body>
+</html>
