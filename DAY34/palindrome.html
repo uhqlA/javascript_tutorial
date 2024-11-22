@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <script>
+        //PALIDROME - STRING forward = string reverse [ if it is same, it is a palidrome]
+
+
+        var string = "refer";
+
+        var revstring = string.split("").reverse().join("")
+
+        //condition to checkpalidrom
+        if(string == revstring){
+            console.log("It is a palidrome " +string);
+        }else{
+            console.log("Not palidrome")
+        }
+    </script>
+    
+</body>
+</html>
