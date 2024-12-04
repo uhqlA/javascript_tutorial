@@ -6,7 +6,13 @@
 }
 
 body{
-    background-color: #222;
+    background-color: greenyellow;
+}
+.container{
+    width: 100%;
+    height: 100vh;
+    align-items: center;
+    justify-content: center;
 }
 
 .card{
@@ -90,4 +96,16 @@ body{
 .humidity, .wind{
     font-size: 28px;
     margin-top: -6px;
+}
+
+.weather{
+    display: none;
+}
+
+.error{
+    text-align: left;
+    margin-left: 10px;
+    font-size: 14px;
+    margin-top: 10px;
+    display: none;
 }

@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class TreeNode{
+            constructor(value){
+                this.value = value
+                this.descendent=[]
+            }
+        }
+        const a =new TreeNode(1);
+        const b =new TreeNode(3);
+        const c =new TreeNode(10);
+        const d =new TreeNode(15);
+        const e =new TreeNode(20);
+
+        a.descendent.push(b)
+        b.descendent.push(c,d,e)
+
+
+        console.log(a.descendent)
+
+    </script>
+    
+</body>
+</html>

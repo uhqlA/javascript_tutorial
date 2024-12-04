@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        class BinaryHeap{
+            constructor(){
+                this.arr=[]; //we have empty array and you have to fill it.
+            }
+            push(element){
+                this.arr.push(element);
+                let index = this.arr.length-1 //array starts from zero 
+                const current = this.arr[index];
+
+                while(index>0){
+                    let parentIndex=Math.floor((index-1)/2);
+                    let parent=this.arr[parentIndex] //a[2]=10
+
+                    if(parent<=parentIndex){
+                        this.arr[parentIndex]=current;
+                        this.arr[index]=parent;
+                        index=parentIndex
+                    } else{
+                        break
+                    }
+                }
+            }
+        }
+
+        const binaryHeap = new BinaryHeap();
+        binaryHeap.push(40);
+        binaryHeap.push(30);
+        binaryHeap.push(20);
+        binaryHeap.push(40);
+        binaryHeap.push(60);
+        binaryHeap.push(50);
+        console.log(binaryHeap)
+
+
+        // popHeap(){
+        //     const 
+        // }
+    </script>
+</body>
+</html>

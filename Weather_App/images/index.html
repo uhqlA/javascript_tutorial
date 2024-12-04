@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="../styles.css" />
+    <title>Weather App</title>
+    <style>
+      /* Add these styles to ensure the video is set as a background */
+      body, html {
+        margin: 0;
+        padding: 0;
+        height: 100%;
+        overflow: hidden;
+      }
+
+      /* Video styling */
+      .background-video {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: -1; /* Ensures the video stays behind the content */
+      }
+
+      /* Ensures the content is properly placed over the video */
+      .content {
+        position: relative;
+        z-index: 1;
+        padding: 20px;
+      }
+
+      /* Your existing CSS (optional) */
+      .card {
+        background-color: rgba(255, 255, 255, 0.8); /* Slightly transparent background */
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Background Video -->
+    <video class="background-video" autoplay muted loop>
+      <source src="../images/11954801_2560_1440_60fps.mp4" type="video/mp4" />
+      Your browser does not support the video tag.
+    </video>
+
+    <!-- Content of the Weather App -->
+    <div class="content">
+      <h1>Weather App</h1>
+
+      <div class="card">
+        <div class="search">
+          <input type="text" placeholder="Enter city name" spellcheck="false" />
+          <button><img src="images/search.png" /></button>
+        </div>
+
+        <div class="error">
+          <p>City name is incorrect</p>
+        </div>
+
+        <div class="weather">
+          <img src="images/rain.png" class="weather-icon" alt="" />
+          <h1 class="temp">22°C</h1>
+          <h2 class="city">Nairobi</h2>
+
+          <div class="details">
+            <div class="col">
+              <img src="images/humidity.png" alt="" />
+              <div>
+                <p class="humidity">50%</p>
+                <p>Humidity</p>
+              </div>
+            </div>
+            <div class="col">
+              <img src="images/wind.png" alt="" />
+              <div>
+                <p class="wind">15 km/h</p>
+                <p>Wind Speed</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <script>
+      const apiKey = "dc6dd497613206d08894f81f51ee5bd0";
+      const apiUrl =
+        "https://api.openweathermap.org/data/2.5/weather?&units=metric&q=";
+      const searchBox = document.querySelector(".search input");
+      const searchBtn = document.querySelector(".search button");
+      const weatherIcon = document.querySelector(".weather-icon");
+
+      async function checkweather(city) {
+        const response = await fetch(apiUrl + city + `&appid=${apiKey}`);
+
+        if (response.status == 404) {
+          document.querySelector(".error").style.display = "block";
+          document.querySelector(".weather").style.display = "none";
+        } else {
+          var data = await response.json();
+
+          document.querySelector(".city").innerHTML = data.name;
+          document.querySelector(".temp").innerHTML =
+            Math.round(data.main.temp) + "°C";
+          document.querySelector(".humidity").innerHTML =
+            data.main.humidity + "%";
+          document.querySelector(".wind").innerHTML = data.wind.speed + " km/h";
+
+          if (data.weather[0].main == "Clouds") {
+            weatherIcon.src = "images/clouds.png";
+          } else if (data.weather[0].main == "Clear") {
+            weatherIcon.src = "images/clear.png";
+          } else if (data.weather[0].main == "Rain") {
+            weatherIcon.src = "images/rain.png";
+          } else if (data.weather[0].main == "Drizzle") {
+            weatherIcon.src = "images/drizzle.png";
+          } else if (data.weather[0].main == "Mist") {
+            weatherIcon.src = "images/mist.png";
+          }
+
+          document.querySelector(".weather").style.display = "block";
+          document.querySelector(".error").style.display = "none";
+        }
+      }
+
+      searchBtn.addEventListener("click", () => {
+        checkweather(searchBox.value);
+      });
+
+      checkweather();
+    </script>
+  </body>
+</html>
